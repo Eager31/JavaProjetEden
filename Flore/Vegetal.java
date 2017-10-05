@@ -1,9 +1,16 @@
 package Flore;
 
+import java.util.AbstractMap.SimpleEntry;
+import java.util.HashMap;
+
 public abstract class Vegetal {
 	
 	protected  Etat etat;
 	protected  char[] dessin;
+	
+
+	ComportementOGM comportementOGM;
+	ComportementRacePure comportementRacePure;
 	
 	public Vegetal() {
 		this.etat = Etat.GRAINE; 
@@ -40,5 +47,12 @@ public abstract class Vegetal {
 		this.etat = Etat.values()[this.etat.ordinal() + 1]; //Pemet de passer à l'étape suivante d'une énumération
 	}
 	
+	public SimpleEntry<Integer, Integer> FaireOGM(int longeur, int largeur) {
+		return comportementOGM.seDupliquer(longeur, largeur);
+	}
+	
+	public void FaireRacePure(HashMap<String, Integer> panier, String nomVegetal) {
+		comportementRacePure.seReproduire(panier, nomVegetal);
+	}
 	
 }

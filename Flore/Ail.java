@@ -1,20 +1,15 @@
 package Flore;
 
-import java.util.HashMap;
 
-public class Ail extends Vegetal implements IRacePure{
+public class Ail extends Vegetal{
 
+	
+	
 	public Ail() {
 		super();
 		this.dessin[3] = 'a';
 		this.dessin[4] = 'A';
-	}
-
-	@Override
-	public void seReproduire(HashMap<String, Integer> panier) {
-		panier.put("Ail", panier.get("Ail") + 3); 
-	}
-
-	
-	
+		comportementOGM = new SeDupliquerUneFois();
+		comportementRacePure = new DeuxGraines(); //Permet de définir que la plante va donner 2 graines
+	}	
 }

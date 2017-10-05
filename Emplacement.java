@@ -6,6 +6,7 @@ public class Emplacement {
 
 	public Emplacement(Vegetal vegetal) {
 		this.vegetal = vegetal;
+		//AZERTY
 	}
 
 	@Override
